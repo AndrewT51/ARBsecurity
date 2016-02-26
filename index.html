@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="securityApp">
+<head>
+  <meta charset="UTF-8">
+  <title>ARBSecurities</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="mainCtrl">
+  <header>
+    <!-- INSERT LOGO HERE -->
+    <nav id="navbar">
+      <div class="upper-bar">
+        <a ui-sref="home">
+          <span id="logo">ARBSecurities</span>
+        </a>
+        <div class="nav-btn">
+          <hr>
+          <hr>
+          <hr>
+        </div>
+        
+      </div>
+      <div class="lower-bar">
+        <ul class="flex-row">
+          <li ng-repeat="item in menuItems">
+            <a ui-sref="{{item.url}}">
+              <span>{{item.heading}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+    </nav>
+    <section>
+     
+      <ui-view></ui-view>
+     
+    </section>
+    <footer>
+      
+    </footer>
+  </header>
+  <script src="websiteData.js"></script>
+  <script src="public/bower_components/angular/angular.min.js"></script>
+  <script src="public/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
