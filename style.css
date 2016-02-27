@@ -8,7 +8,7 @@
 html {
   background-color: #cecaca;
   max-width:100vw;
-  /*overflow-x: hidden;*/
+  overflow-x: hidden;
 }
 
 p {
