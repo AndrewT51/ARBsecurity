@@ -6,7 +6,9 @@
 }
 
 html {
-  background-color: #222222;
+  background-color: #cecaca;
+  width:100vw;
+  overflow-x: hidden;
 }
 
 p {
@@ -60,9 +62,9 @@ body {
   flex-direction: column;
 }
 
+/* Without this the nav on some pages is transparent */
 nav {
   background-color: #222222;
-  /*margin-bottom: 5px;*/
 }
 
 .flex-row{
@@ -83,10 +85,8 @@ nav {
   font-size: 1em;
   background-color: transparent;
   height: 100%;
-  border-bottom: 0;
+  border-bottom: 3px solid #222222;
   color: #9d9d9d;
-  padding-bottom: 2px;
-  /*border-right: 1px solid #9d9d9d;*/
 }
 
 .main-list {
@@ -122,17 +122,19 @@ nav {
 }
 
 section {
-  min-height: calc(100vh - 243px);
-  padding-bottom: 70px;
+  min-height: calc(100vh - 214px);
+  padding-bottom: 50px;
   background-color: rgba(206,202,202,0.65);
+  /*background-color: #cecaca;*/
 }
+
 
 article {
   padding: 5px 50px;
 }
 
 footer {
-  height: 100px;
+  height: 90px;
   background-color: #222222;
   padding-top: 10px;
 }
@@ -143,12 +145,13 @@ footer {
   font-size: 18px;
 }
 .footer-links{
-
   margin: 20px 0;
 }
+
 .pull-up {
   position: relative;
   top: -110px;
+  padding-top: 10px;
   background-color: #cecaca;
 }
 
@@ -174,6 +177,16 @@ footer {
   font-size: 22px;
 }
 
+/*.fill-space {
+  position: absolute;
+  bottom: -240px;
+  height: 110px;
+  width:100%;
+  background-color: #cecaca;
+  /*background-color: #fff;
+  z-index:1;
+}*/
+
 
 /************************************************
 /               Media queries                   *
@@ -192,72 +205,54 @@ footer {
   #logo {
     font-size: 50px;
   }
-/*  .nav-btn {
+  .nav-btn {
     display: block;
-    padding:4px;
+    padding: 1px;
     padding-top: 0px;
-    height: 44px;
-    width: 48px;
+    height: 41px;
+    width: 41px;
     border-radius: 10px;
     border: 2px solid #9d9d9d;
     float: right;
-    margin: 7px 10px;
+    margin: 10px 10px;
+  }
+
+  .btn-selected {
     background-color: #474646;
-    }*/
-    .nav-btn {
-      display: block;
-      padding: 1px;
-      padding-top: 0px;
-      height: 41px;
-      width: 41px;
-      border-radius: 10px;
-      border: 2px solid #9d9d9d;
-      float: right;
-      margin: 10px 10px;
-    }
-/*  .nav-btn hr {
-    margin: 10px 3px;
-    height:1px;
-    width: 40px;
-    }*/
-    .btn-selected {
-      background-color: #474646;
-      
-    }
 
-    .nav-btn hr {
-      margin: 9px 4px;
-      height: 0px;
-      width: 30px;
-    }
-    .desktop-view {
-      display:none;
-    }
- /* .mobile-view {
-    position: relative;
-    top: 0px;
-    z-index:-1;
+  }
+
+  .nav-btn hr {
+    margin: 9px 4px;
+    height: 0px;
+    width: 30px;
+  }
+  .desktop-view {
     display:none;
-    }*/
-    .pull-up {
-      top: 0px;
-
-    }
   }
 
+  .pull-up {
+    top: 0px;
 
-  /* EXPERIMENTS */
-
-  .bgi {
-    position:absolute;
-    top:0;
-    left:0;
-    height:100%;
-    width:100%;
-    margin: 0;
-    padding: 0;
-    z-index:-1;
   }
+}
+
+#bar-selected {
+  border-bottom: 3px solid #AF3F3F !important;
+}
+
+/* EXPERIMENTS */
+
+.bgi {
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  margin: 0;
+  padding: 0;
+  z-index:-1;
+}
 
 
 

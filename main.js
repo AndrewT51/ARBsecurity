@@ -10,77 +10,62 @@ app.config(["$urlRouterProvider", "$stateProvider", "$locationProvider" ,functio
   //   requireBase: false
   // });
 
-
   $stateProvider
   .state("home",{
     url:"/home",
-    templateUrl: "templates/home.html"
-    // controller: "mainCtrl"
-  })
-  .state("mission-statement",{
-    url:"/mission-statement",
-    templateUrl: "templates/mission.html"
-    // controller: "mainCtrl"
+    templateUrl: "templates/home.html",
+    controller: "mainCtrl"
   })
   .state("about",{
     url:"/about",
-    templateUrl: "templates/about.html"
-    // controller: "mainCtrl"
-  })
-  .state("alarm-response",{
-    url:"/alarm-response",
-    templateUrl: "templates/alarmResponse.html"
-    // controller: "mainCtrl"
-  })
-  .state("event-security",{
-    url:"/event-security",
-    templateUrl: "templates/eventSecurity.html"
-    // controller: "mainCtrl"
-  })
-  .state("close-protection",{
-    url:"/close-protection",
-    templateUrl: "templates/closeProtection.html",
+    templateUrl: "templates/about.html",
     controller: "mainCtrl"
   })
-  .state("oil-and-gas",{
-    url:"/oil-and-gas",
-    templateUrl: "templates/oilAndGas.html",
-    controller: "mainCtrl"
- })
-  .state("estate-security",{
-    url:"/estate-security",
-    templateUrl: "templates/estateSecurity.html",
-    controller: "mainCtrl"
- })
-  .state("mobile-patrols",{
-    url:"/mobile-patrols",
-    templateUrl: "templates/mobilePatrols.html",
-    controller: "mainCtrl"
- })
-   .state("vetting",{
-    url:"/vetting",
-    templateUrl: "templates/vetting.html",
-    controller: "mainCtrl"
- })
-
+  data.sections.forEach(function(el){
+    $stateProvider.state(el.url,{
+      url: "/" + el.heading,
+      templateUrl: "templates/" + el.image + ".html",
+      controller: "mainCtrl"
+    })
+  })
 }])
 
 app.controller("mainCtrl", ["$scope","$state", function($scope,$state){
   var menuUp = true;
-  var dropdown = document.getElementsByClassName("mobile-view");
-  var menuButton = document.getElementsByClassName("nav-btn");
+  var toClearUnderline = [].slice.call(document.querySelectorAll("[data-index]"))
+  toClearUnderline.forEach(function(el){
+    el.setAttribute("id","")
+  })
+  var dropdown = document.getElementsByClassName("mobile-view")[0];
+  var menuButton = document.getElementsByClassName("nav-btn")[0];
   $scope.menuItems = data.sections;
 
-  $scope.dropMenu = function(){
-    menuUp = !menuUp;
-    dropdown[0].style.display = menuUp ?  "none":"block";
-    menuUp ?  menuButton[0].className = menuButton[0].className.replace(/ btn-selected/,"") : menuButton[0].className += " btn-selected";
-  };
-  $scope.menuClick = function(item, index){
-    menuUp = !menuUp;
-    dropdown[0].style.display = menuUp ?  "none":"block";
-    $state.go(item.url)
+  // Check what menu item this is in the array, it will correlate with the data-num on the page menu 
+  var pageHighlight;
+  data.sections.forEach(function(obj,index){
+    if(obj.url === $state.$current.name){
+      pageHighlight = index
+    }
+  })
 
+  var underline = document.querySelector("[data-index='" + pageHighlight + "']") || null;
+  if(underline){
+    underline.setAttribute("id","bar-selected");
+  } 
+  
+  function handleDropdown(){
+    menuUp = !menuUp;
+    dropdown.style.display = menuUp ?  "none" : "block";
+    menuUp ?  menuButton.className = menuButton.className.replace(/ btn-selected/,"") : menuButton.className += " btn-selected";
+  }
+
+  $scope.dropMenu = function(){
+    handleDropdown();
+  };
+
+  $scope.menuClick = function(item, index){
+    handleDropdown();
+    $state.go(item.url)
   }
 
 }])
