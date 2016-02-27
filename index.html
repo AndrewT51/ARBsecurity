@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>ARBSecurities</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body ng-controller="mainCtrl">
@@ -45,16 +46,6 @@
         </ul>
       </nav>
 
-     <!--  <nav class="desktop-view">
-        <ul class="flex-row">
-          <li ng-repeat="item in menuItems" data-num="{{$index}}" id="flex-col">
-            <img src="pics/{{item.image}}.jpg" alt="">
-            <div class="hidden-detail">
-              <span>{{item.heading}}</span>
-            </div>
-          </li>
-        </ul>
-      </nav> -->
     <section>
      
       <ui-view></ui-view>
@@ -62,7 +53,8 @@
     </section>
     <footer>
       <ul class="footer-links">
-        <a ui-sref="home"><li>HOME</li></a>
+        <a ui-sref="home"><li><i class="fa fa-home"></i></li></a>
+        <a href="mailto:norman@arbsecurities.com?subject=Query&body=Please send me more information"><li><i class="fa fa-envelope"></i></li></a>
         <a ui-sref="about"><li>ABOUT</li></a>
       </ul>
       

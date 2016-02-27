@@ -5,6 +5,10 @@
   font-size: 14px;
 }
 
+html {
+  background-color: #222222;
+}
+
 p {
   margin: 0 0 10px;
 }
@@ -118,8 +122,9 @@ nav {
 }
 
 section {
-  min-height: calc(100vh - 228px);
-  margin-bottom: 50px;
+  min-height: calc(100vh - 248px);
+  padding-bottom: 70px;
+  background-color: #cecaca;
 }
 
 article {
@@ -134,7 +139,8 @@ footer {
 .footer-links li{
   display: inline;
   color: #e2bc5a;
-  margin: 3px 10px;
+  margin: 3px 15px;
+  font-size: 18px;
 }
 .footer-links{
  
@@ -143,7 +149,7 @@ footer {
 .pull-up {
   position: relative;
   top: -110px;
-  background-color: white;
+  background-color: #cecaca;
 }
 
 [data-num]:hover>.hidden-detail{
@@ -161,6 +167,11 @@ footer {
 }
 .hidden-detail>span {
   font-size: 1.3em;
+}
+
+
+.fa {
+  font-size: 22px;
 }
 
 
@@ -211,6 +222,20 @@ footer {
     top: 0px;
 
   }
+}
+
+
+/* EXPERIMENTS */
+
+.bgi {
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  margin: 0;
+  padding: 0;
+  z-index:-1;
 }
 
 

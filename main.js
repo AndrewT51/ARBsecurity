@@ -74,7 +74,7 @@ app.controller("mainCtrl", ["$scope","$state", function($scope,$state){
     menuUp = !menuUp;
     dropdown[0].style.display = menuUp ?  "none":"block";
   };
-  $scope.menuClick = function(item){
+  $scope.menuClick = function(item, index){
     menuUp = !menuUp;
     dropdown[0].style.display = menuUp ?  "none":"block";
     $state.go(item.url)
