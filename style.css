@@ -92,7 +92,7 @@ nav {
 .main-list {
   display: flex;
   flex-direction: row;
-  height:150px;
+  height:110px;
   background-color: grey;
   border-bottom: black 1px solid;
   align-items: center;
@@ -117,14 +117,14 @@ nav {
 }
 
 .small-screen {
-  width:150px;
-  height:150px;
+  width:110px;
+  height:110px;
 }
 
 section {
   min-height: calc(100vh - 248px);
   padding-bottom: 70px;
-  background-color: #cecaca;
+  background-color: rgba(206,202,202,0.65);
 }
 
 article {
