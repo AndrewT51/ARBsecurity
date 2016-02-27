@@ -52,17 +52,25 @@ body {
 
 .flex-row, .main-list, #navbar li, .mobile-heading, .flex {
 
+  display: -webkit-flex;
+
+  display: -ms-flexbox;
+
   display: flex;  
 }
 
 .mobile-heading {
   margin-left: 15%;
   font-size: 0.8em;
-  justify-content: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
  
 }
 #flex-col {
-  flex-direction: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 /* Without this the nav on some pages is transparent */
@@ -71,9 +79,16 @@ nav {
 }
 
 .flex-row{
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-end;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+              -ms-grid-row-align: flex-end;
+          align-items: flex-end;
 }
 
 .lower-bar li {
@@ -93,20 +108,32 @@ nav {
 }
 
 .main-list {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   height:110px;
   background-color: grey;
   border-bottom: black 1px solid;
-  align-items: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 2em;
 }
 .desktop-view ul,.desktop-view ul li a{
+  display:-webkit-flex;
+  display:-ms-flexbox;
   display:flex;
 }
 .desktop-view li, .desktop-view img {
-  flex-direction: row;
-  flex: 1 1 40px;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex: 1 1 40px;
+      -ms-flex: 1 1 40px;
+          flex: 1 1 40px;
   list-style-type: none; 
 }
 
@@ -159,7 +186,8 @@ footer {
 }
 
 [data-num]:hover>.hidden-detail{
-  transform: translateY(-70px);
+  -webkit-transform: translateY(-70px);
+          transform: translateY(-70px);
 }
 
 .hidden-detail {
@@ -260,3 +288,5 @@ footer {
 
 
 
+
+/*# sourceMappingURL=style.css.map */
