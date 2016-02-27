@@ -2,6 +2,7 @@
 <html lang="en" ng-app="securityApp">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>ARBSecurities</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -13,7 +14,7 @@
         <a ui-sref="home">
           <span id="logo">ARBSecurities</span>
         </a>
-        <div class="nav-btn">
+        <div class="nav-btn" ng-click="dropMenu()">
           <hr>
           <hr>
           <hr>
@@ -31,16 +32,44 @@
       </div>
       
     </nav>
+
+      <nav class="mobile-view" >
+        <ul id="flex-col">
+          <li class="main-list" ng-repeat="item in menuItems" ng-click="menuClick(item,$index)">
+              
+              <img class="small-screen" src="pics/small_{{item.image}}.jpg" alt="" >
+              <div class="mobile-heading">{{item.heading}}</div>
+
+              
+          </li>
+        </ul>
+      </nav>
+
+     <!--  <nav class="desktop-view">
+        <ul class="flex-row">
+          <li ng-repeat="item in menuItems" data-num="{{$index}}" id="flex-col">
+            <img src="pics/{{item.image}}.jpg" alt="">
+            <div class="hidden-detail">
+              <span>{{item.heading}}</span>
+            </div>
+          </li>
+        </ul>
+      </nav> -->
     <section>
      
       <ui-view></ui-view>
      
     </section>
     <footer>
+      <ul class="footer-links">
+        <a ui-sref="home"><li>HOME</li></a>
+        <a ui-sref="about"><li>ABOUT</li></a>
+      </ul>
       
     </footer>
   </header>
   <script src="websiteData.js"></script>
+  <script src="public/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="public/bower_components/angular/angular.min.js"></script>
   <script src="public/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="main.js"></script>

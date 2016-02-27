@@ -1,30 +1,33 @@
 <section>
-  <div class="container">
-    <h3>ARBSecurities is an established security company, gathering experience from a wide range of specialist security sectors</h3>
-  </div>
+<!--   <div class="container">
+    
+  </div> -->
 
-      <nav class="mobile-view">
+    <!--   <nav class="mobile-view">
         <ul id="flex-col">
           <li class="main-list" ng-repeat="item in menuItems">
             <img class="small-screen" src="pics/small_{{item.image}}.jpg" alt="">
             <div class="mobile-heading">{{item.heading}}</div>
           </li>
         </ul>
-      </nav>
+      </nav> -->
 
       <nav class="desktop-view">
         <ul class="flex-row">
-          <li ng-repeat="item in menuItems" data-num="{{$index}}" id="flex-col">
-            <img src="pics/{{item.image}}.jpg" alt="">
-            <div class="hidden-detail">
-              <span>{{item.heading}}</span>
-            </div>
+          <li ng-repeat="item in menuItems"  >
+            <a ui-sref="{{item.url}}" data-num="{{$index}}" id="flex-col">
+              <img src="pics/{{item.image}}.jpg" alt="">
+              <div class="hidden-detail">
+                <span>{{item.heading}}</span>
+              </div>
+            </a>
           </li>
         </ul>
       </nav>
   
   <div class="container pull-up">
     <article>
+      <h3>ARBSecurities is an established security company, gathering experience from a wide range of specialist security sectors</h3>
       <h4>Security Services</h4>
       <p>ARBSecurities is able to offer a wide range of security services to suit your needs.</p>
       <p>The secret of our success lies in the fully integrated approach to both the design and there after the delivery</p>

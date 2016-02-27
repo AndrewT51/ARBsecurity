@@ -65,10 +65,20 @@ app.config(["$urlRouterProvider", "$stateProvider", "$locationProvider" ,functio
 
 }])
 
-app.controller("mainCtrl", ["$scope", function($scope){
-  // data.sections.forEach(function(el){
-  //   el.headingWithBreak = el.heading.replace(/ /,"\n")
-  // })
+app.controller("mainCtrl", ["$scope","$state", function($scope,$state){
+  var menuUp = true;
+  var dropdown = document.getElementsByClassName("mobile-view");
   $scope.menuItems = data.sections;
+
+  $scope.dropMenu = function(){
+    menuUp = !menuUp;
+    dropdown[0].style.display = menuUp ?  "none":"block";
+  };
+  $scope.menuClick = function(item){
+    menuUp = !menuUp;
+    dropdown[0].style.display = menuUp ?  "none":"block";
+    $state.go(item.url)
+
+  }
 
 }])
