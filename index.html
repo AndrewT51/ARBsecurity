@@ -22,22 +22,22 @@
         </div>
         
       </div>
-      <div class="lower-bar">
+      <div class="lower-bar ng-cloak">
         <ul class="flex-row">
           <li ng-repeat="item in menuItems" data-index="{{$index}}">
-            <a ui-sref="{{item.url}}" >
-              <span>{{item.heading}}</span>
+            <a ui-sref="{{item.url}}" class="ng-cloak">
+              <span class="ng-cloak">{{item.heading}}</span>
             </a>
           </li>
         </ul>
       </div> 
     </nav>
 
-      <nav class="mobile-view" >
+      <nav class="mobile-view " >
         <ul id="flex-col">
           <li class="main-list" ng-repeat="item in menuItems" ng-click="menuClick(item,$index)">      
               <img class="small-screen" src="pics/small_{{item.image}}.jpg" alt="" >
-              <div class="mobile-heading">{{item.heading}}</div>
+              <div class="mobile-heading ng-cloak">{{item.heading}}</div>
           </li>
         </ul>
       </nav>
