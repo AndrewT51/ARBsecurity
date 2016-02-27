@@ -68,11 +68,13 @@ app.config(["$urlRouterProvider", "$stateProvider", "$locationProvider" ,functio
 app.controller("mainCtrl", ["$scope","$state", function($scope,$state){
   var menuUp = true;
   var dropdown = document.getElementsByClassName("mobile-view");
+  var menuButton = document.getElementsByClassName("nav-btn");
   $scope.menuItems = data.sections;
 
   $scope.dropMenu = function(){
     menuUp = !menuUp;
     dropdown[0].style.display = menuUp ?  "none":"block";
+    menuUp ?  menuButton[0].className = menuButton[0].className.replace(/ btn-selected/,"") : menuButton[0].className += " btn-selected";
   };
   $scope.menuClick = function(item, index){
     menuUp = !menuUp;
