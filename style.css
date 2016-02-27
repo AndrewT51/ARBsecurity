@@ -251,6 +251,11 @@ footer {
   .desktop-view {
     display:flex;
   }
+  .desktop-view li, .desktop-view img {
+  flex-direction: row;
+  flex: 1 1 40px;
+  list-style-type: none; 
+}
 }
 
 
